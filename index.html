@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vui học Tiếng Anh 4 – Ôn tập học kì 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF8F3; --surface:#FFFFFF; --ink:#2A2E38; --muted:#66707D; --edge:#EBDFD6;
+  --teal:#3FA7A3; --teal-soft:#D3EFED; --teal-ink:#0F5F5C;
+  --pink:#D9477E; --pink-soft:#FADDEA;
+  --peach:#C26A27; --peach-soft:#F8E1CD;
+  --btn:#0F5F5C; --btn-ink:#FFFFFF;
+  --ok:#1E9A53; --ok-soft:#DCF5E5; --bad:#D24242; --bad-soft:#FDE3E3; --star:#F2AE00;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#191C23; --surface:#242833; --ink:#F1F2F5; --muted:#A5ADBA; --edge:#363C4A;
+    --teal:#5CC8C3; --teal-soft:#1F3E3D; --teal-ink:#8EE0DC;
+    --pink:#F07FAA; --pink-soft:#45283B; --peach:#F0A86C; --peach-soft:#46362A;
+    --btn:#5CC8C3; --btn-ink:#0D2B2A;
+    --ok:#5ED394; --ok-soft:#173A28; --bad:#FF8A8A; --bad-soft:#3E1F1F; --star:#FFC633;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#191C23; --surface:#242833; --ink:#F1F2F5; --muted:#A5ADBA; --edge:#363C4A;
+  --teal:#5CC8C3; --teal-soft:#1F3E3D; --teal-ink:#8EE0DC;
+  --pink:#F07FAA; --pink-soft:#45283B; --peach:#F0A86C; --peach-soft:#46362A;
+  --btn:#5CC8C3; --btn-ink:#0D2B2A;
+  --ok:#5ED394; --ok-soft:#173A28; --bad:#FF8A8A; --bad-soft:#3E1F1F; --star:#FFC633;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Baloo 2","Be Vietnam Pro",system-ui,sans-serif;font-size:1.05rem;line-height:1.4;-webkit-tap-highlight-color:transparent}
+.vi{font-family:"Be Vietnam Pro",system-ui,sans-serif}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:10px}
+.scallop{display:flex;height:22px;overflow:hidden}
+.scallop span{flex:1;border-radius:0 0 50% 50%}
+.scallop span:nth-child(3n+1){background:#F2BBD6}.scallop span:nth-child(3n+2){background:#7DD8CF}.scallop span:nth-child(3n){background:#E6B38D}
+.wrap{max-width:720px;margin:0 auto;padding:14px 16px 48px}
+
+/* Home */
+.kicker{font-family:"Be Vietnam Pro",sans-serif;font-weight:600;color:var(--muted);margin:10px 0 0;font-size:.95rem}
+h1{font-weight:800;font-size:clamp(2.3rem,10vw,3.6rem);line-height:.95;margin:4px 0 2px;color:var(--teal-ink)}
+h1 .n4{display:inline-block;background:var(--star);color:#3A2A00;border-radius:16px;padding:0 .22em;transform:rotate(-6deg);margin-left:.1em}
+.sub{margin:4px 0 0;font-family:"Be Vietnam Pro",sans-serif;color:var(--muted);font-size:.95rem}
+.owl{display:flex;align-items:flex-end;gap:10px;margin:16px 0}
+.owl .bird{font-size:3rem;line-height:1;flex:none}
+.bubble{position:relative;background:var(--surface);border:3px solid var(--edge);border-radius:18px 18px 18px 4px;padding:8px 14px;font-weight:700;font-size:1.15rem}
+.bubble small{display:block;font-family:"Be Vietnam Pro",sans-serif;font-weight:500;font-size:.88rem;color:var(--muted)}
+.label{font-weight:800;font-size:1.25rem;margin:18px 0 8px}
+.name{width:100%;font:inherit;font-size:1.2rem;padding:10px 14px;border:3px solid var(--edge);border-radius:14px;background:var(--surface);color:var(--ink)}
+.name:focus{outline:none;border-color:var(--teal)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:3px solid var(--edge);background:var(--surface);border-radius:999px;padding:4px 14px;font-weight:700;font-size:1rem}
+.chip[aria-pressed="true"]{background:var(--teal-soft);border-color:var(--teal);color:var(--teal-ink)}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (min-width:600px){.modes{grid-template-columns:repeat(3,1fr)}}
+.mode{border:0;border-radius:22px;padding:14px 12px 12px;text-align:left;display:flex;flex-direction:column;gap:2px;min-height:132px;transition:transform .12s}
+.mode:active{transform:scale(.97)}
+.mode .e{font-size:2.3rem;line-height:1.1}
+.mode b{font-size:1.2rem;line-height:1.1;margin-top:4px}
+.mode span.d{font-family:"Be Vietnam Pro",sans-serif;font-size:.84rem;color:var(--muted);line-height:1.3}
+.mode:nth-child(3n+1){background:var(--teal-soft)} .mode:nth-child(3n+2){background:var(--pink-soft)} .mode:nth-child(3n){background:var(--peach-soft)}
+.mode.wide{grid-column:1/-1;flex-direction:row;align-items:center;gap:14px;min-height:0;background:var(--star);color:#3A2A00}
+.mode.wide span.d{color:#5A4500}
+.foot{margin-top:22px;font-family:"Be Vietnam Pro",sans-serif;font-size:.85rem;color:var(--muted);text-align:center}
+
+/* Game */
+.top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.icon{width:44px;height:44px;border-radius:14px;border:3px solid var(--edge);background:var(--surface);font-size:1.2rem;display:inline-flex;align-items:center;justify-content:center;padding:0;flex:none}
+.icon[aria-pressed="false"]{opacity:.45}
+.path{flex:1;display:flex;gap:4px;justify-content:center}
+.dot{flex:1;max-width:30px;aspect-ratio:1;border-radius:50%;background:var(--edge);display:flex;align-items:center;justify-content:center;font-size:.95rem;transition:transform .25s}
+.dot.cur{background:var(--surface);box-shadow:inset 0 0 0 3px var(--teal)}
+.dot.ok{background:transparent;transform:scale(1.15)}
+.dot.bad{background:var(--bad-soft)}
+.owl.game{margin:8px 0 10px}
+.owl.game .bird{font-size:2.4rem}
+.card{background:var(--surface);border:3px solid var(--edge);border-radius:26px;padding:18px 16px 18px;text-align:center}
+.ask{font-weight:800;font-size:1.5rem;margin:0;line-height:1.1}
+.askvi{font-family:"Be Vietnam Pro",sans-serif;color:var(--muted);margin:2px 0 0;font-size:.95rem}
+.stage{margin:14px auto 16px;display:flex;justify-content:center;align-items:center;min-height:150px}
+.pic{display:inline-flex;align-items:center;justify-content:center;line-height:1}
+.big .pic{width:160px;height:160px;font-size:118px}
+.big .pic.flag{width:210px;height:140px}
+.pic.flag{border-radius:10px;overflow:hidden;box-shadow:0 0 0 2px var(--edge)}
+.pic svg{width:100%;height:100%;display:block}
+.cal{display:inline-flex;flex-direction:column;border-radius:16px;overflow:hidden;border:3px solid var(--edge);background:var(--surface);min-width:150px}
+.cal b{display:block;height:30px;background:var(--pink)}
+.cal span{padding:14px 18px;font-family:"Be Vietnam Pro",sans-serif;font-weight:600;font-size:1.7rem}
+.hint{display:block;font-family:"Be Vietnam Pro",sans-serif;color:var(--muted);margin-top:6px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{border:3px solid var(--edge);background:var(--surface);border-radius:18px;min-height:66px;padding:8px 10px;font-weight:700;font-size:clamp(1.05rem,4.4vw,1.35rem);line-height:1.15;transition:border-color .15s,background .15s}
+.opt.long{font-size:clamp(.95rem,3.6vw,1.12rem)}
+@media (hover:hover){.opt:not(:disabled):hover{border-color:var(--teal)}}
+.opt:disabled{cursor:default}
+.opt.ok{border-color:var(--ok);background:var(--ok-soft);animation:pop .4s}
+.opt.bad{border-color:var(--bad);background:var(--bad-soft);animation:shake .35s}
+.opt.dim{opacity:.45}
+.opt.cardopt{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 6px}
+.cardopt .pic{width:78px;height:78px;font-size:60px}
+.cardopt .pic.flag{width:96px;height:64px}
+.cardopt .cal{min-width:0}.cardopt .cal b{height:14px}.cardopt .cal span{font-size:1rem;padding:6px 10px}
+.cardopt .lab{font-family:"Be Vietnam Pro",sans-serif;font-weight:500;font-size:.85rem;color:var(--muted)}
+.speak{width:96px;height:96px;border-radius:50%;border:0;background:var(--btn);color:var(--btn-ink);font-size:2.6rem}
+.speak.small{width:44px;height:44px;font-size:1.2rem;vertical-align:middle;margin-left:6px}
+.qline{font-weight:800;font-size:clamp(1.4rem,6vw,1.9rem);margin:6px 0 0;line-height:1.2}
+.slots{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:6px 0 16px;min-height:56px}
+.slot{width:40px;height:50px;border-bottom:4px solid var(--edge);font-weight:800;font-size:1.8rem;display:flex;align-items:center;justify-content:center}
+.slot.f{border-color:var(--teal)}
+.slots.ok .slot,.slots.ok .wchip{border-color:var(--ok);color:var(--ok)}
+.slots.bad .slot,.slots.bad .wchip{border-color:var(--bad);color:var(--bad)}
+.wline{border:3px dashed var(--edge);border-radius:16px;padding:8px;align-items:center}
+.wchip{border:3px solid var(--teal);background:var(--teal-soft);color:var(--teal-ink);border-radius:12px;padding:4px 10px;font-weight:700;font-size:1.2rem}
+.tiles{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:12px}
+.tile{min-width:50px;height:54px;border-radius:14px;border:3px solid var(--peach);background:var(--peach-soft);color:var(--ink);font-weight:800;font-size:1.6rem;padding:0 10px}
+.tile.w{font-size:1.2rem;height:48px}
+.tile:disabled{visibility:hidden}
+.row{display:flex;justify-content:center;gap:8px}
+.btn{border:0;border-radius:16px;padding:12px 22px;font-weight:800;font-size:1.2rem}
+.btn.main{background:var(--btn);color:var(--btn-ink)}
+.btn.ghost{background:transparent;border:3px solid var(--edge);font-size:1rem;padding:8px 14px}
+.fb{margin-top:14px;border-radius:18px;padding:12px 14px}
+.fb.ok{background:var(--ok-soft)} .fb.bad{background:var(--bad-soft)}
+.fb p{margin:0 0 6px}
+.fb .vi{font-size:.95rem}
+.fb .ans{font-weight:800;font-size:1.3rem}
+@keyframes pop{50%{transform:scale(1.07)}}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.confetti{position:fixed;pointer-events:none;font-size:1.6rem;z-index:50;animation:fly .9s ease-out forwards}
+@keyframes fly{to{transform:translate(var(--dx),var(--dy)) rotate(var(--r)) scale(.5);opacity:0}}
+.pulse{animation:pulse 1.2s ease-in-out 2}
+@keyframes pulse{50%{transform:scale(1.1)}}
+
+/* End */
+.trophy{font-size:5rem;line-height:1;margin:6px 0}
+.score{font-weight:800;font-size:3.2rem;color:var(--star);line-height:1;margin:0}
+.score small{font-size:.5em;color:var(--muted)}
+.miss{text-align:left;margin-top:16px;border-top:3px dashed var(--edge);padding-top:10px}
+.miss h3{margin:0 0 6px;font-size:1.3rem}
+.mrow{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--edge)}
+.mrow .t{flex:1}
+.mrow b{font-size:1.15rem}
+.mrow .vi{display:block;font-size:.88rem;color:var(--muted)}
+.stamp{font-family:"Be Vietnam Pro",sans-serif;font-size:.85rem;color:var(--muted);margin:14px 0 0}
+.actions{display:grid;gap:10px;margin-top:16px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="scallop" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+<div class="wrap" id="app"></div>
+
+<script>
+/* ---------- Pictures ---------- */
+function star(cx, cy, r, fill){
+  let pts = [];
+  for (let i = 0; i < 10; i++){ const a = (-90 + i * 36) * Math.PI / 180, rr = i % 2 ? r * 0.4 : r; pts.push((cx + rr * Math.cos(a)).toFixed(2) + "," + (cy + rr * Math.sin(a)).toFixed(2)); }
+  return `<polygon points="${pts.join(" ")}" fill="${fill}"/>`;
+}
+const GB_IN = `<rect width="60" height="40" fill="#012169"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="8"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="3"/><path d="M30,0 V40 M0,20 H60" stroke="#fff" stroke-width="12"/><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="7"/>`;
+function stripes(n, a, b){ let s = "", h = 40 / n; for (let i = 0; i < n; i++) s += `<rect y="${(i*h).toFixed(3)}" width="60" height="${(h+.05).toFixed(3)}" fill="${i % 2 ? b : a}"/>`; return s; }
+const FLAGS = {
+  vn: `<rect width="60" height="40" fill="#DA251D"/>${star(30,20,11,"#FFEB00")}`,
+  jp: `<rect width="60" height="40" fill="#fff"/><circle cx="30" cy="20" r="11" fill="#BC002D"/>`,
+  th: `<rect width="60" height="40" fill="#A51931"/><rect y="6.67" width="60" height="26.66" fill="#fff"/><rect y="13.33" width="60" height="13.34" fill="#2D2A4A"/>`,
+  sg: `<rect width="60" height="40" fill="#fff"/><rect width="60" height="20" fill="#EF3340"/><circle cx="11" cy="10" r="6.5" fill="#fff"/><circle cx="13.6" cy="10" r="6" fill="#EF3340"/>${[[18,5.5],[21.2,8],[20,11.8],[16,11.8],[14.8,8]].map(p=>star(p[0],p[1],1.5,"#fff")).join("")}`,
+  my: `${stripes(14,"#CC0001","#fff")}<rect width="30" height="22.86" fill="#010066"/><circle cx="11" cy="11.4" r="7" fill="#FFCC00"/><circle cx="13" cy="11.4" r="6" fill="#010066"/>${star(21.5,11.4,5,"#FFCC00")}`,
+  us: `${stripes(13,"#B22234","#fff")}<rect width="26" height="21.54" fill="#3C3B6E"/>${(()=>{let s="";for(let r=0;r<4;r++)for(let c=0;c<5;c++)s+=`<circle cx="${3+c*5}" cy="${3+r*5.1}" r="1.1" fill="#fff"/>`;return s;})()}`,
+  gb: GB_IN,
+  au: `<rect width="60" height="40" fill="#012169"/><g transform="scale(.5)">${GB_IN}</g>${star(15,31,5,"#fff")}${star(46,9,2.6,"#fff")}${star(53,18,2.6,"#fff")}${star(46,33,2.9,"#fff")}${star(39,20,2.6,"#fff")}${star(49,24,1.5,"#fff")}`
+};
+const JAM = `<svg viewBox="0 0 60 60"><rect x="16" y="6" width="28" height="9" rx="3" fill="#B7794A"/><rect x="12" y="14" width="36" height="40" rx="9" fill="#D33A3A"/><circle cx="30" cy="34" r="10" fill="#fff"/><path d="M30 41c-6-4-7-9-4-11 1.5-1 3-.5 4 1 1-1.5 2.5-2 4-1 3 2 2 7-4 11z" fill="#E0413F"/><path d="M28 28l2 2 2-2" stroke="#2E8B3E" stroke-width="2" fill="none"/></svg>`;
+const NUMW = ["twelve","one","two","three","four","five","six","seven","eight","nine","ten","eleven"];
+const MINW = {0:"o'clock",15:"fifteen",30:"thirty",45:"forty-five"};
+const timeText = (h, m) => m === 0 ? `${NUMW[h % 12]} o'clock` : `${NUMW[h % 12]} ${MINW[m]}`;
+const timeVi = (h, m) => m === 0 ? `${h} giờ` : `${h} giờ ${m}`;
+function clockSVG(h, m){
+  const hA = ((h % 12) + m / 60) * 30 * Math.PI / 180, mA = m * 6 * Math.PI / 180;
+  let nums = "";
+  for (let n = 1; n <= 12; n++){ const a = n * 30 * Math.PI / 180; nums += `<text x="${(50 + 36 * Math.sin(a)).toFixed(1)}" y="${(50 - 36 * Math.cos(a) + 4.5).toFixed(1)}" text-anchor="middle" font-size="12" font-weight="700" font-family="Baloo 2, sans-serif" fill="currentColor">${n}</text>`; }
+  return `<svg viewBox="0 0 100 100" style="color:var(--ink)"><circle cx="50" cy="50" r="46" fill="var(--surface)" stroke="currentColor" stroke-width="4"/>${nums}
+    <line x1="50" y1="50" x2="${(50 + 22 * Math.sin(hA)).toFixed(1)}" y2="${(50 - 22 * Math.cos(hA)).toFixed(1)}" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+    <line x1="50" y1="50" x2="${(50 + 32 * Math.sin(mA)).toFixed(1)}" y2="${(50 - 32 * Math.cos(mA)).toFixed(1)}" stroke="var(--pink)" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="50" cy="50" r="4" fill="currentColor"/></svg>`;
+}
+
+/* ---------- Vocabulary (Units 1–10) ---------- */
+const V = [
+  {u:1,en:"America",vi:"nước Mỹ",f:"us"},{u:1,en:"Malaysia",vi:"Ma-lai-xi-a",f:"my"},
+  {u:1,en:"Australia",vi:"nước Úc",f:"au"},{u:1,en:"Singapore",vi:"Xin-ga-po",f:"sg"},
+  {u:1,en:"Britain",vi:"nước Anh",f:"gb"},{u:1,en:"Thailand",vi:"Thái Lan",f:"th"},
+  {u:1,en:"Japan",vi:"Nhật Bản",f:"jp"},{u:1,en:"Viet Nam",vi:"Việt Nam",f:"vn"},
+  {u:2,en:"two o'clock",vi:"2 giờ",c:[2,0]},{u:2,en:"two fifteen",vi:"2 giờ 15",c:[2,15]},
+  {u:2,en:"two thirty",vi:"2 giờ 30",c:[2,30]},{u:2,en:"two forty-five",vi:"2 giờ 45",c:[2,45]},
+  {u:2,en:"get up",vi:"thức dậy",p:"⏰"},{u:2,en:"go to bed",vi:"đi ngủ",p:"🛌"},
+  {u:2,en:"go to school",vi:"đi học",p:"🎒"},{u:2,en:"have breakfast",vi:"ăn sáng",p:"🍳",a:1},
+  {u:2,en:"have lunch",vi:"ăn trưa",p:"🍱",a:1},{u:2,en:"have dinner",vi:"ăn tối",p:"🍽️",a:1},
+  {u:2,en:"do homework",vi:"làm bài tập về nhà",p:"📝",a:1},{u:2,en:"chat with friends",vi:"trò chuyện với bạn bè",p:"💬",a:1},
+  {u:3,en:"Monday",vi:"thứ Hai",cal:"Thứ Hai"},{u:3,en:"Tuesday",vi:"thứ Ba",cal:"Thứ Ba"},
+  {u:3,en:"Wednesday",vi:"thứ Tư",cal:"Thứ Tư"},{u:3,en:"Thursday",vi:"thứ Năm",cal:"Thứ Năm"},
+  {u:3,en:"Friday",vi:"thứ Sáu",cal:"Thứ Sáu"},{u:3,en:"Saturday",vi:"thứ Bảy",cal:"Thứ Bảy"},
+  {u:3,en:"Sunday",vi:"Chủ Nhật",cal:"Chủ Nhật"},
+  {u:3,en:"listen to music",vi:"nghe nhạc",p:"🎧"},{u:3,en:"do housework",vi:"làm việc nhà",p:"🧹",a:1},
+  {u:3,en:"study at school",vi:"học ở trường",p:"🏫",a:1},{u:3,en:"watch TV",vi:"xem ti vi",p:"📺"},
+  {u:3,en:"stay at home",vi:"ở nhà",p:"🏠",a:1},
+  ...["January","February","March","April","May","June","July","August","September","October","November","December"].map((m,i)=>({u:4,en:m,vi:`tháng ${i+1}`,cal:`Tháng ${i+1}`})),
+  {u:4,en:"birthday",vi:"sinh nhật",p:"🎂"},{u:4,en:"grapes",vi:"quả nho",p:"🍇"},
+  {u:4,en:"jam",vi:"mứt",svg:JAM},{u:4,en:"lemonade",vi:"nước chanh",p:"🍋",a:1},
+  {u:4,en:"juice",vi:"nước ép trái cây",p:"🧃",a:1},{u:4,en:"party",vi:"bữa tiệc",p:"🎉"},
+  {u:4,en:"chips",vi:"khoai tây chiên",p:"🍟"},{u:4,en:"water",vi:"nước",p:"💧",a:1},
+  {u:5,en:"cook",vi:"nấu ăn",p:"👨‍🍳"},{u:5,en:"draw a picture",vi:"vẽ tranh",p:"🖍️"},
+  {u:5,en:"play the guitar",vi:"chơi đàn ghi-ta",p:"🎸"},{u:5,en:"play the piano",vi:"chơi đàn pi-a-nô",p:"🎹"},
+  {u:5,en:"ride a bike",vi:"đi xe đạp",p:"🚲"},{u:5,en:"ride a horse",vi:"cưỡi ngựa",p:"🏇"},
+  {u:5,en:"roller skate",vi:"trượt pa-tin",p:"🛼"},{u:5,en:"swim",vi:"bơi",p:"🏊"},
+  {u:6,en:"city",vi:"thành phố",p:"🏙️"},{u:6,en:"mountains",vi:"núi",p:"⛰️"},
+  {u:6,en:"town",vi:"thị trấn",p:"🏘️",a:1},{u:6,en:"village",vi:"làng quê",p:"🏡",a:1},
+  {u:6,en:"garden",vi:"khu vườn",p:"🌷"},{u:6,en:"playground",vi:"sân chơi",p:"🎠",a:1},
+  {u:6,en:"building",vi:"tòa nhà",p:"🏢"},{u:6,en:"computer room",vi:"phòng máy tính",p:"💻"},
+  {u:7,en:"art",vi:"môn Mĩ thuật",p:"🎨",a:1},{u:7,en:"music",vi:"môn Âm nhạc",p:"🎵",a:1},
+  {u:7,en:"science",vi:"môn Khoa học",p:"🔬",a:1},{u:7,en:"history and geography",vi:"môn Lịch sử và Địa lí",p:"🗺️",a:1},
+  {u:7,en:"English",vi:"môn Tiếng Anh",p:"🔤",a:1},{u:7,en:"PE",vi:"môn Giáo dục thể chất",p:"🤸",a:1},
+  {u:7,en:"maths",vi:"môn Toán",p:"➗",a:1},{u:7,en:"IT",vi:"môn Tin học",p:"🖱️",a:1},
+  {u:7,en:"Vietnamese",vi:"môn Tiếng Việt",p:"📖",a:1},
+  {u:8,en:"English teacher",vi:"giáo viên tiếng Anh",p:"👩‍🏫",a:1},{u:8,en:"Maths teacher",vi:"giáo viên Toán",p:"👨‍🏫",a:1},
+  {u:8,en:"write a story",vi:"viết truyện",p:"✍️"},{u:8,en:"painter",vi:"họa sĩ",p:"🧑‍🎨"},
+  {u:8,en:"singer",vi:"ca sĩ",p:"🎤"},
+  {u:9,en:"sports day",vi:"ngày hội thể thao",p:"🏅",a:1},{u:9,en:"games",vi:"trò chơi",p:"🎯",a:1},
+  {u:9,en:"sports",vi:"các môn thể thao",p:"⚽",a:1},{u:9,en:"different",vi:"khác nhau",p:"≠",a:1},
+  {u:10,en:"beach",vi:"bãi biển",p:"🏖️"},{u:10,en:"campsite",vi:"khu cắm trại",p:"🏕️"},
+  {u:10,en:"countryside",vi:"vùng quê",p:"🌾",a:1},{u:10,en:"Bangkok",vi:"Băng Cốc (Thái Lan)",p:"🛕",a:1},
+  {u:10,en:"Sydney",vi:"Xít-ni (Úc)",p:"🦘",a:1},{u:10,en:"Tokyo",vi:"Tô-ky-ô (Nhật Bản)",p:"🗼",a:1},
+  {u:10,en:"London",vi:"Luân Đôn (Anh)",p:"💂",a:1}
+];
+const QA = [
+  {u:1,q:"Where are you from?",a:"I'm from Viet Nam."},
+  {u:1,q:"Where is she from?",a:"She is from Thailand."},
+  {u:1,q:"Where are they from?",a:"They are from Australia."},
+  {u:2,q:"What time is it?",a:"It's two fifteen."},
+  {u:2,q:"What time do you go to bed?",a:"I go to bed at ten o'clock."},
+  {u:3,q:"What day is it today?",a:"It's Monday."},
+  {u:3,q:"What do you do on Sunday?",a:"I listen to music."},
+  {u:4,q:"When's your birthday?",a:"It's in March.",g:"month"},
+  {u:4,q:"What do you want to eat?",a:"I want grapes."},
+  {u:4,q:"What do you want to drink?",a:"I want water."},
+  {u:5,q:"Can you swim?",a:"Yes, I can."},
+  {u:5,q:"Can he play the guitar?",a:"No, he can't, but he can cook."},
+  {u:5,q:"Can she ride a bike?",a:"Yes, she can."},
+  {u:6,q:"Where is your school?",a:"It's in the city."},
+  {u:6,q:"How many gardens are there at your school?",a:"There is one.",g:"many"},
+  {u:6,q:"How many computer rooms are there at your school?",a:"There are three.",g:"many"},
+  {u:7,q:"What subjects do you have today?",a:"I have English and PE."},
+  {u:7,q:"When do you have maths?",a:"I have maths on Mondays and Thursdays."},
+  {u:8,q:"What's your favourite subject?",a:"It's art."},
+  {u:8,q:"Why do you like art?",a:"Because I want to be a painter."},
+  {u:9,q:"Is your sports day in November?",a:"Yes, it is."},
+  {u:9,q:"When's your sports day?",a:"It's in April.",g:"month"},
+  {u:10,q:"Were you at the zoo last weekend?",a:"Yes, I was."},
+  {u:10,q:"Were you at the beach last weekend?",a:"No, I wasn't."},
+  {u:10,q:"Where were you last summer?",a:"I was in Bangkok."}
+];
+const MODES = [
+  {id:"pic", e:"🖼️", name:"Nhìn hình đoán từ", d:"Nhìn hình, chọn từ tiếng Anh đúng"},
+  {id:"listen", e:"🎧", name:"Nghe và chọn hình", d:"Nghe đọc từ, chạm vào hình đúng"},
+  {id:"spell", e:"🔤", name:"Ghép chữ", d:"Ghép các chữ cái thành từ"},
+  {id:"clock", e:"🕐", name:"Xem đồng hồ", d:"Đọc giờ bằng tiếng Anh"},
+  {id:"qa", e:"💬", name:"Hỏi và đáp", d:"Chọn câu trả lời đúng"},
+  {id:"order", e:"🧩", name:"Sắp xếp câu", d:"Xếp từ thành câu trả lời"},
+  {id:"mix", e:"🎲", name:"Thử thách tổng hợp", d:"Trộn tất cả các trò, 10 câu", wide:true}
+];
+const PRAISE = ["Great!","Super!","Well done!","Excellent!","Amazing!","Good job!","Fantastic!"];
+const ROUND = 10;
+
+/* ---------- Helpers ---------- */
+const app = document.getElementById("app");
+const hasTTS = "speechSynthesis" in window && typeof SpeechSynthesisUtterance !== "undefined";
+const rand = n => Math.floor(Math.random() * n);
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--){ const j = rand(i + 1); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pick = arr => arr[rand(arr.length)];
+let soundOn = true;
+function say(t){
+  if (!hasTTS || !t) return;
+  try { speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(t); u.lang = "en-US"; u.rate = .8;
+    const v = speechSynthesis.getVoices().find(v => /^en(-|_)/i.test(v.lang)); if (v) u.voice = v; speechSynthesis.speak(u); } catch(e){}
+}
+let ac;
+function tone(freqs, dur = .14, type = "sine", gap = .09, vol = .22){
+  if (!soundOn) return;
+  try {
+    ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+    const t0 = ac.currentTime;
+    freqs.forEach((f, i) => { const o = ac.createOscillator(), g = ac.createGain(), t = t0 + i * gap;
+      o.type = type; o.frequency.value = f; g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + .02); g.gain.exponentialRampToValueAtTime(.0001, t + dur);
+      o.connect(g); g.connect(ac.destination); o.start(t); o.stop(t + dur + .05); });
+  } catch(e){}
+}
+const sfx = { ok: () => tone([660, 880, 1175]), bad: () => tone([260, 200], .22, "triangle", .16, .25), end: () => tone([523, 659, 784, 1047, 1319], .2, "sine", .12) };
+function burst(el){
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const r = el.getBoundingClientRect();
+  for (let i = 0; i < 14; i++){
+    const s = document.createElement("span"); s.className = "confetti"; s.textContent = pick(["⭐","🎉","✨","🌟","🎈"]);
+    s.style.left = (r.left + r.width / 2 - 12) + "px"; s.style.top = (r.top + r.height / 2 - 12) + "px";
+    const a = Math.random() * Math.PI * 2, d = 80 + Math.random() * 110;
+    s.style.setProperty("--dx", Math.cos(a) * d + "px"); s.style.setProperty("--dy", Math.sin(a) * d + "px"); s.style.setProperty("--r", (rand(360) - 180) + "deg");
+    document.body.appendChild(s); setTimeout(() => s.remove(), 950);
+  }
+}
+function picHTML(it){
+  if (it.f) return `<span class="pic flag"><svg viewBox="0 0 60 40" preserveAspectRatio="none">${FLAGS[it.f]}</svg></span>`;
+  if (it.c) return `<span class="pic">${clockSVG(it.c[0], it.c[1])}</span>`;
+  if (it.cal) return `<span class="cal"><b></b><span>${esc(it.cal)}</span></span>`;
+  if (it.svg) return `<span class="pic">${it.svg}</span>`;
+  return `<span class="pic">${it.p}</span>`;
+}
+const spBtn = (t, cls = "small") => hasTTS ? `<button class="speak ${cls}" data-say="${esc(t)}" aria-label="Nghe">🔊</button>` : "";
+function store(k, v){ try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch(e){ return null; } }
+
+/* ---------- State ---------- */
+let units = (() => { try { const s = JSON.parse(store("hk1-units") || "null"); if (Array.isArray(s) && s.length) return s; } catch(e){} return [1,2,3,4,5,6,7,8,9,10]; })();
+let G = null;
+const vocabPool = () => { const p = V.filter(x => units.includes(x.u)); return p.length >= 4 ? p : V; };
+const qaPool = () => { const p = QA.filter(x => units.includes(x.u)); return p.length >= 4 ? p : QA; };
+const spellable = x => /^[A-Za-z]+$/.test(x.en) && x.en.length <= 10;
+function fill(pool, n){ let out = []; while (out.length < n) out = out.concat(shuffle(pool)); return out.slice(0, n); }
+function distract(it, n){
+  const same = shuffle(V.filter(x => x !== it && x.u === it.u && x.en !== it.en));
+  const other = shuffle(V.filter(x => x.u !== it.u));
+  return same.concat(other).slice(0, n);
+}
+
+/* ---------- Question builders ---------- */
+function qPic(it){ return {t:"pic", it, answer:it.en, options:shuffle([it.en, ...distract(it, 3).map(x => x.en)]), miss:{en:it.en, vi:it.vi}}; }
+function qListen(it){ return {t:"listen", it, answer:it.en, cards:shuffle([it, ...distract(it, 3)]), miss:{en:it.en, vi:it.vi}}; }
+function qSpell(it){
+  const L = it.en.split(""); let t = shuffle(L), g = 0; while (t.join("") === it.en && g++ < 10) t = shuffle(L);
+  return {t:"spell", it, answer:it.en, tiles:t, picked:[], miss:{en:it.en, vi:it.vi}};
+}
+function qClock(){
+  const h = 1 + rand(12), m = pick([0, 15, 30, 45]);
+  const set = new Set([timeText(h, m)]);
+  const cands = shuffle([...[0, 15, 30, 45].filter(x => x !== m).map(x => timeText(h, x)), ...[1,2,3,4,5,6,7,8,9,10,11,12].filter(x => x !== h).map(x => timeText(x, m))]);
+  for (const c of cands){ if (set.size >= 4) break; set.add(c); }
+  return {t:"clock", h, m, answer:timeText(h, m), options:shuffle([...set]), miss:{en:timeText(h, m), vi:timeVi(h, m)}};
+}
+function qQA(q){
+  const ds = shuffle(QA.filter(x => x !== q && !(q.g && x.g === q.g) && x.a !== q.a)).slice(0, 3).map(x => x.a);
+  return {t:"qa", q, answer:q.a, options:shuffle([q.a, ...ds]), miss:{en:q.q, vi:q.a}};
+}
+function qOrder(q){
+  const w = q.a.split(" "); let t = shuffle(w.map((x, i) => i)), g = 0;
+  while (t.every((x, i) => w[x] === w[i]) && g++ < 10) t = shuffle(w.map((x, i) => i));
+  return {t:"order", q, answer:q.a, words:w, order:t, picked:[], miss:{en:q.q, vi:q.a}};
+}
+function buildRound(mode){
+  if (mode === "pic") return fill(vocabPool(), ROUND).map(qPic);
+  if (mode === "listen") return fill(vocabPool(), ROUND).map(qListen);
+  if (mode === "spell"){ let p = vocabPool().filter(spellable); if (p.length < 3) p = V.filter(spellable); return fill(p, ROUND).map(qSpell); }
+  if (mode === "clock") return Array.from({length:ROUND}, qClock);
+  if (mode === "qa") return fill(qaPool(), ROUND).map(qQA);
+  if (mode === "order") return fill(qaPool(), ROUND).map(qOrder);
+  // mix
+  const types = shuffle(fill(["pic","spell","clock","qa","order", ...(hasTTS ? ["listen"] : ["pic"])], ROUND));
+  const vq = shuffle(vocabPool()), sq = shuffle(vocabPool().filter(spellable).length >= 3 ? vocabPool().filter(spellable) : V.filter(spellable)), qq = shuffle(qaPool());
+  let vi = 0, si = 0, qi = 0;
+  return types.map(t => {
+    if (t === "pic") return qPic(vq[vi++ % vq.length]);
+    if (t === "listen") return qListen(vq[vi++ % vq.length]);
+    if (t === "spell") return qSpell(sq[si++ % sq.length]);
+    if (t === "clock") return qClock();
+    if (t === "qa") return qQA(qq[qi++ % qq.length]);
+    return qOrder(qq[qi++ % qq.length]);
+  });
+}
+
+/* ---------- Home ---------- */
+function renderHome(){
+  G = null;
+  const nm = store("hk1-name") || "";
+  app.innerHTML = `
+  <p class="kicker">Tiếng Anh Cô Ánh</p>
+  <h1>Vui học<br>Tiếng Anh <span class="n4">4</span></h1>
+  <p class="sub">Ôn tập học kì 1, từ Unit 1 đến Unit 10</p>
+  <div class="owl"><span class="bird" aria-hidden="true">🦉</span>
+    <div class="bubble">Hello! Let’s play!<small>Chọn Unit và chọn trò chơi để bắt đầu nhé.</small></div></div>
+  <label class="label" for="nm" style="display:block">Tên của em</label>
+  <input class="name vi" id="nm" maxlength="30" placeholder="Ví dụ: Bảo An" value="${esc(nm)}" autocomplete="off">
+  <p class="label">Chọn Unit</p>
+  <div class="chips" id="chips">
+    <button class="chip" data-unit="all" aria-pressed="${units.length === 10}">Tất cả</button>
+    ${[1,2,3,4,5,6,7,8,9,10].map(u => `<button class="chip" data-unit="${u}" aria-pressed="${units.length < 10 && units.includes(u)}">Unit ${u}</button>`).join("")}
+  </div>
+  <p class="label">Chọn trò chơi</p>
+  <div class="modes">
+    ${MODES.filter(m => m.id !== "listen" || hasTTS).map(m => `<button class="mode ${m.wide ? "wide" : ""}" data-mode="${m.id}"><span class="e" aria-hidden="true">${m.e}</span><span><b>${m.name}</b><br><span class="d">${m.d}</span></span></button>`).join("")}
+  </div>
+  <p class="foot">Trò Xem đồng hồ dùng giờ bất kì, không theo Unit.</p>`;
+}
+function toggleUnit(v){
+  if (v === "all") units = [1,2,3,4,5,6,7,8,9,10];
+  else {
+    const u = +v;
+    if (units.length === 10) units = [u];
+    else if (units.includes(u)) { units = units.filter(x => x !== u); if (!units.length) units = [1,2,3,4,5,6,7,8,9,10]; }
+    else units = [...units, u].sort((a, b) => a - b);
+  }
+  store("hk1-units", JSON.stringify(units));
+  document.querySelectorAll("#chips .chip").forEach(c => {
+    const d = c.dataset.unit;
+    c.setAttribute("aria-pressed", d === "all" ? String(units.length === 10) : String(units.length < 10 && units.includes(+d)));
+  });
+}
+
+/* ---------- Game ---------- */
+function startGame(mode){
+  const nmEl = document.getElementById("nm");
+  const name = nmEl ? nmEl.value.trim() : (G ? G.name : "");
+  if (nmEl) store("hk1-name", name);
+  G = {mode, name, qs:buildRound(mode), i:0, res:[], locked:false, timer:null};
+  renderQ();
+}
+function pathHTML(){
+  return G.qs.map((_, k) => {
+    const r = G.res[k];
+    return `<span class="dot ${r === true ? "ok" : r === false ? "bad" : k === G.i ? "cur" : ""}">${r === true ? "⭐" : ""}</span>`;
+  }).join("");
+}
+function shell(inner, owl, owlVi){
+  app.innerHTML = `
+  <div class="top">
+    <button class="icon" data-act="home" aria-label="Về trang chọn trò chơi">✕</button>
+    <div class="path" id="path" aria-label="Câu ${G.i + 1} trên ${ROUND}">${pathHTML()}</div>
+    <button class="icon" data-act="sound" aria-pressed="${soundOn}" aria-label="Bật tắt âm thanh">🔔</button>
+  </div>
+  <div class="owl game"><span class="bird" aria-hidden="true">🦉</span><div class="bubble" id="bub">${owl}${owlVi ? `<small>${owlVi}</small>` : ""}</div></div>
+  <section class="card" id="card">${inner}<div id="fb"></div></section>`;
+}
+function renderQ(){
+  clearTimeout(G.timer); G.locked = false;
+  const q = G.qs[G.i];
+  if (q.t === "pic"){
+    shell(`<div class="stage big">${picHTML(q.it)}</div>${q.it.a && !q.it.cal ? `<span class="hint">(${esc(q.it.vi)})</span>` : ""}
+      <div class="opts" style="margin-top:12px">${q.options.map((o, k) => `<button class="opt ${o.length > 13 ? "long" : ""}" data-opt="${k}">${esc(o)}</button>`).join("")}</div>`,
+      "What is this?", "Đây là gì? Chọn từ đúng nhé.");
+  } else if (q.t === "listen"){
+    shell(`<div class="stage" style="min-height:110px"><button class="speak pulse" data-say="${esc(q.answer)}" aria-label="Nghe lại">🔊</button></div>
+      <div class="opts">${q.cards.map((c, k) => `<button class="opt cardopt" data-opt="${k}">${picHTML(c)}<span class="lab">${esc(c.vi)}</span></button>`).join("")}</div>`,
+      "Listen and choose!", "Nghe và chạm vào hình đúng. Bấm 🔊 để nghe lại.");
+    setTimeout(() => say(q.answer), 350);
+  } else if (q.t === "spell"){
+    shell(`<div class="stage big" style="min-height:120px">${picHTML(q.it)}</div><span class="hint">(${esc(q.it.vi)})</span>
+      <div class="slots" id="slots"></div><div class="tiles" id="tiles"></div>
+      <div class="row"><button class="btn ghost" data-act="undo">⌫ Xóa</button><button class="btn ghost" data-act="clear">Làm lại</button></div>`,
+      "Spell the word!", "Chạm vào các chữ cái để ghép thành từ.");
+    drawSpell();
+  } else if (q.t === "clock"){
+    shell(`<div class="stage big"><span class="pic">${clockSVG(q.h, q.m)}</span></div>
+      <div class="opts">${q.options.map((o, k) => `<button class="opt" data-opt="${k}">${esc(o)}</button>`).join("")}</div>`,
+      "What time is it?", "Mấy giờ rồi? Chọn đáp án đúng nhé.");
+  } else if (q.t === "qa"){
+    shell(`<p class="qline">${esc(q.q.q)} ${spBtn(q.q.q)}</p>
+      <div class="opts" style="grid-template-columns:1fr;margin-top:16px">${q.options.map((o, k) => `<button class="opt long" data-opt="${k}">${esc(o)}</button>`).join("")}</div>`,
+      "Choose the answer!", "Chọn câu trả lời đúng cho câu hỏi.");
+  } else {
+    shell(`<p class="qline">${esc(q.q.q)} ${spBtn(q.q.q)}</p>
+      <div class="slots wline" id="slots" style="margin-top:14px"></div><div class="tiles" id="tiles"></div>
+      <div class="row"><button class="btn ghost" data-act="undo">⌫ Xóa</button><button class="btn ghost" data-act="clear">Làm lại</button></div>`,
+      "Make the answer!", "Chạm vào các từ theo đúng thứ tự để tạo câu trả lời.");
+    drawOrder();
+  }
+}
+function drawSpell(){
+  const q = G.qs[G.i];
+  document.getElementById("slots").innerHTML = q.answer.split("").map((_, k) => `<span class="slot ${q.picked[k] != null ? "f" : ""}">${q.picked[k] != null ? esc(q.tiles[q.picked[k]]) : ""}</span>`).join("");
+  document.getElementById("tiles").innerHTML = q.tiles.map((c, k) => `<button class="tile" data-tile="${k}" ${q.picked.includes(k) || G.locked ? "disabled" : ""}>${esc(c)}</button>`).join("");
+}
+function drawOrder(){
+  const q = G.qs[G.i];
+  document.getElementById("slots").innerHTML = q.picked.length ? q.picked.map(k => `<span class="wchip">${esc(q.words[k])}</span>`).join("") : `<span class="vi" style="color:var(--muted);font-size:.9rem">Câu trả lời sẽ hiện ở đây</span>`;
+  document.getElementById("tiles").innerHTML = q.order.map(k => `<button class="tile w" data-tile="${k}" ${q.picked.includes(k) || G.locked ? "disabled" : ""}>${esc(q.words[k])}</button>`).join("");
+}
+function pickTile(k){
+  const q = G.qs[G.i]; if (G.locked || q.picked.includes(k)) return;
+  q.picked.push(k);
+  if (q.t === "spell"){
+    drawSpell();
+    if (q.picked.length === q.answer.length){ const ok = q.picked.map(x => q.tiles[x]).join("") === q.answer; G.locked = true; drawSpell(); document.getElementById("slots").classList.add(ok ? "ok" : "bad"); finish(ok); }
+  } else {
+    drawOrder();
+    if (q.picked.length === q.words.length){ const ok = q.picked.map(x => q.words[x]).join(" ") === q.answer; G.locked = true; drawOrder(); document.getElementById("slots").classList.add(ok ? "ok" : "bad"); finish(ok); }
+  }
+}
+function undo(){ const q = G.qs[G.i]; if (G.locked || !q.picked.length) return; q.picked.pop(); q.t === "spell" ? drawSpell() : drawOrder(); }
+function clearT(){ const q = G.qs[G.i]; if (G.locked) return; q.picked = []; q.t === "spell" ? drawSpell() : drawOrder(); }
+function choose(k){
+  if (G.locked) return;
+  const q = G.qs[G.i];
+  const val = q.t === "listen" ? q.cards[k].en : q.options[k];
+  const ok = val === q.answer;
+  G.locked = true;
+  document.querySelectorAll(".opt").forEach((b, j) => {
+    b.disabled = true;
+    const v = q.t === "listen" ? q.cards[j].en : q.options[j];
+    if (v === q.answer) b.classList.add("ok"); else if (j === k) b.classList.add("bad"); else b.classList.add("dim");
+  });
+  finish(ok, document.querySelectorAll(".opt")[k]);
+}
+function finish(ok, el){
+  const q = G.qs[G.i];
+  G.res[G.i] = ok;
+  document.getElementById("path").innerHTML = pathHTML();
+  const bub = document.getElementById("bub");
+  const last = G.i === G.qs.length - 1;
+  const spoken = q.t === "qa" || q.t === "order" ? q.answer : q.answer;
+  if (ok){
+    sfx.ok(); burst(el || document.getElementById("slots") || document.getElementById("card"));
+    bub.innerHTML = `${pick(PRAISE)} ⭐<small>Đúng rồi, giỏi quá!</small>`;
+    document.getElementById("fb").innerHTML = `<div class="fb ok"><p class="ans">${esc(q.answer)}</p>${q.miss.vi && q.t !== "qa" && q.t !== "order" ? `<p class="vi">${esc(q.miss.vi)}</p>` : ""}<button class="btn main" data-act="next">${last ? "Xem kết quả" : "Câu tiếp"}</button></div>`;
+    setTimeout(() => say(spoken), 350);
+    G.timer = setTimeout(next, 2200);
+  } else {
+    sfx.bad();
+    bub.innerHTML = `Oops! Try again next time.<small>Chưa đúng rồi, xem đáp án nhé.</small>`;
+    document.getElementById("fb").innerHTML = `<div class="fb bad"><p class="vi">Đáp án đúng là:</p><p class="ans">${esc(q.answer)} ${spBtn(spoken)}</p>${q.miss.vi && q.t !== "qa" && q.t !== "order" ? `<p class="vi">${esc(q.miss.vi)}</p>` : ""}<button class="btn main" data-act="next">${last ? "Xem kết quả" : "Câu tiếp"}</button></div>`;
+    setTimeout(() => say(spoken), 450);
+  }
+  const nb = document.querySelector('[data-act="next"]'); if (nb) nb.focus({preventScroll:true});
+  document.getElementById("fb").scrollIntoView({block:"nearest", behavior:"smooth"});
+}
+function next(){
+  clearTimeout(G.timer);
+  if (G.i >= G.qs.length - 1) return renderEnd();
+  G.i++; renderQ(); window.scrollTo({top:0, behavior:"smooth"});
+}
+
+/* ---------- End ---------- */
+function renderEnd(){
+  clearTimeout(G.timer);
+  const sc = G.res.filter(Boolean).length;
+  const [tro, en, vi] = sc >= 9 ? ["🏆","Amazing!","Xuất sắc! Em là nhà vô địch!"] : sc >= 7 ? ["🥇","Great job!","Giỏi lắm! Ôn thêm vài từ là hoàn hảo."] : sc >= 5 ? ["👍","Good!","Khá lắm! Chơi thêm lượt nữa nhé."] : ["💪","Keep trying!","Cố lên! Xem lại các câu sai rồi chơi lại nhé."];
+  const missed = G.qs.filter((q, k) => !G.res[k]);
+  const uniq = []; missed.forEach(q => { if (!uniq.some(m => m.en === q.miss.en)) uniq.push(q.miss); });
+  const mode = MODES.find(m => m.id === G.mode);
+  const when = new Date().toLocaleString("vi-VN", {hour:"2-digit", minute:"2-digit", day:"2-digit", month:"2-digit", year:"numeric"});
+  app.innerHTML = `
+  <section class="card">
+    <p class="vi" style="margin:0;color:var(--muted)">${G.name ? `Kết quả của ${esc(G.name)}` : "Kết quả"}, trò ${esc(mode.name)}</p>
+    <div class="trophy" aria-hidden="true">${tro}</div>
+    <p class="score">⭐ ${sc}<small> / ${G.qs.length}</small></p>
+    <p style="font-weight:800;font-size:1.5rem;margin:6px 0 0">${en}</p>
+    <p class="vi" style="margin:0">${vi}</p>
+    ${uniq.length ? `<div class="miss"><h3>Ôn lại nhé</h3>${uniq.map(m => `<div class="mrow"><span class="t"><b>${esc(m.en)}</b><span class="vi">${esc(m.vi)}</span></span>${spBtn(m.en)}</div>`).join("")}</div>` : ""}
+    <p class="stamp">Hoàn thành lúc ${when}. Chụp màn hình này gửi giáo viên nhé.</p>
+    <div class="actions">
+      <button class="btn main" data-act="again">Chơi lại</button>
+      <button class="btn ghost" data-act="home" style="font-size:1.1rem">Chọn trò khác</button>
+    </div>
+  </section>`;
+  sfx.end();
+  if (sc >= 7) setTimeout(() => burst(document.querySelector(".trophy")), 150);
+}
+
+/* ---------- Events ---------- */
+app.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  if (b.dataset.say !== undefined){ say(b.dataset.say); return; }
+  if (b.dataset.unit) return toggleUnit(b.dataset.unit);
+  if (b.dataset.mode){ try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); } catch(e){} return startGame(b.dataset.mode); }
+  if (b.dataset.opt !== undefined) return choose(+b.dataset.opt);
+  if (b.dataset.tile !== undefined) return pickTile(+b.dataset.tile);
+  const a = b.dataset.act;
+  if (a === "undo") return undo();
+  if (a === "clear") return clearT();
+  if (a === "next") return next();
+  if (a === "home"){ if (G) clearTimeout(G.timer); if (hasTTS) speechSynthesis.cancel(); return renderHome(); }
+  if (a === "again") return startGame(G.mode);
+  if (a === "sound"){ soundOn = !soundOn; b.setAttribute("aria-pressed", String(soundOn)); }
+});
+document.addEventListener("keydown", e => {
+  if (!G || e.target.tagName === "INPUT" || e.ctrlKey || e.metaKey || e.altKey) return;
+  const q = G.qs[G.i];
+  if (G.locked){ if (e.key === "Enter" && document.activeElement?.dataset?.act !== "next"){ e.preventDefault(); next(); } return; }
+  if (["pic","listen","clock","qa"].includes(q.t) && /^[1-4]$/.test(e.key)) choose(+e.key - 1);
+  if (q.t === "spell"){
+    if (e.key === "Backspace"){ e.preventDefault(); undo(); }
+    else if (/^[a-zA-Z]$/.test(e.key)){ const k = q.tiles.findIndex((c, j) => c.toLowerCase() === e.key.toLowerCase() && !q.picked.includes(j)); if (k >= 0) pickTile(k); }
+  }
+});
+if (hasTTS) speechSynthesis.getVoices();
+renderHome();
+</script>
+</body>
+</html>
